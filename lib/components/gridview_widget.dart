@@ -3,6 +3,7 @@ import 'package:reader_tracker/models/book.dart';
 import 'package:reader_tracker/utils/book_details_arguments.dart';
 
 class GridViewWidget extends StatelessWidget {
+
   const GridViewWidget({
     super.key,
     required List<Book> books,
@@ -28,8 +29,8 @@ class GridViewWidget extends StatelessWidget {
                   onTap: () {
                     // Navigate to the details screen
                     Navigator.pushNamed(context, '/details',
-                        arguments: BookDetailsArguments(
-                            itemBook: book, isFromSavedScreen: false));
+                        arguments: BookDetailsArguments(itemBook: book, isFromSavedScreen: false)
+                            );
                   },
                   child: Column(
                     children: [

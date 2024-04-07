@@ -7,13 +7,13 @@ class DatabaseHelper {
   static const _databaseVersion = 1;
   static const _tableName = 'books';
 
-  DatabaseHelper._privateConstructor();
+  DatabaseHelper._privateConstructor();//control how instances are created
   static final DatabaseHelper instance = DatabaseHelper._privateConstructor();
 
   static Database? _database;
 
   Future<Database> get database async {
-    _database ??= await _initDatabase();
+    _database ??= await _initDatabase();//if database is null, 
     return _database!;
   }
 
@@ -47,6 +47,7 @@ class DatabaseHelper {
     ''');
   }
 
+//returns an int when an insert occurs
   Future<int> insert(Book book) async {
     Database db = await instance.database;
     return await db.insert(_tableName, book.toJson());

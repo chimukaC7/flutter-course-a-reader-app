@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.orangeAccent),
           useMaterial3: true,
         ),
-        initialRoute: '/',
+        initialRoute: '/',//entry point of the application
         routes: {
-          '/home': (context) => const HomeScreen(),
+          '/home': (context) => const HomeScreen(),//key value
           '/saved': (context) => const SavedScreen(),
           '/favorites': (context) => const FavoritesScreen(),
           '/details': (context) => const BookDetailsScreen(),

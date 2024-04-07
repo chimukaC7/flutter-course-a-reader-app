@@ -14,14 +14,17 @@ class Network {
     if (response.statusCode == 200) {
       // we have data (json)
       var data = json.decode(response.body);
+
       if (data['items'] != null && data['items'] is List) {
         List<Book> books = (data['items'] as List<dynamic>)
-            .map((book) => Book.fromJson(book as Map<String, dynamic>))
+            .map((book) => Book.fromJson(book as Map<String, dynamic>))//for each book
             .toList();
         return books;
+
       } else {
         return [];
       }
+
     } else {
       throw Exception('Failed to load books');
     }

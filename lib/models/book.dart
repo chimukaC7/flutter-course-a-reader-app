@@ -43,9 +43,9 @@ class Book {
       publishedDate: volumeInfo['publishedDate'] ?? '',
       description: volumeInfo['description'] ?? '',
       industryIdentifiers: {
-        for (var item
-            in volumeInfo['industryIdentifiers'] as List<dynamic>? ?? [])
-          item['type'] as String? ?? '': item['identifier'] as String? ?? ''
+        for (var item in volumeInfo['industryIdentifiers'] as List<dynamic>? ?? [])
+          item['type'] as String? ?? '': 
+          item['identifier'] as String? ?? ''
       },
       pageCount: volumeInfo['pageCount'] ?? 0,
       language: volumeInfo['language'] ?? '',
@@ -106,6 +106,6 @@ class Book {
   @override
   String toString() {
     // TODO: implement toString
-    return "Book: ${this.title} isFavorite: ${isFavorite}";
+    return "Book: ${title} isFavorite: ${isFavorite}";
   }
 }

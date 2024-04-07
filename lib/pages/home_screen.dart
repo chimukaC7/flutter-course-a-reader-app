@@ -21,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _books = books;
       });
     } catch (e) {}
+    
     setState(() {}); // go ahead and rebuild the widget
   }
 

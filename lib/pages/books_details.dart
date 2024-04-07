@@ -13,8 +13,9 @@ class BookDetailsScreen extends StatefulWidget {
 class _BookDetailsScreenState extends State<BookDetailsScreen> {
   @override
   Widget build(BuildContext context) {
-    final args =
-        ModalRoute.of(context)?.settings.arguments as BookDetailsArguments;
+
+    final args = ModalRoute.of(context)?.settings.arguments as BookDetailsArguments;
+
     final Book book = args.itemBook;
     final bool isFromSavedScreen = args.isFromSavedScreen;
 
@@ -28,6 +29,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
         child: Center(
           child: Column(
             children: [
+              //no curly brackets becos you are inside a widget
               if (book.imageLinks.isNotEmpty)
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -68,14 +70,19 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
                               onPressed: () async {
                                 // save a book to the datase
                                 try {
+                                  
                                   int savedInt = await DatabaseHelper.instance
                                       .insert(book);
+
                                   SnackBar snackBar = const SnackBar(
                                       content: Text("Book Saved"));
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(snackBar);
+
                                 } catch (e) {
+
                                   print("Error: $e");
+
                                 }
                               },
                               child: const Text('Save'))
@@ -83,7 +90,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
                               onPressed: () async {},
                               icon: const Icon(Icons.favorite),
                               label: const Text('Favorite'))),
-                  const SizedBox(
+                  const SizedBox(//just to add some space
                     height: 10,
                   ),
                   Text(
