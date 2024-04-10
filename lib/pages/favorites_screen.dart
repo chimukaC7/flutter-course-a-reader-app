@@ -26,6 +26,10 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               return Center(
                 child: Text('Error: ${snapshot.error}'),
               );
+            } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+              return const Center(
+                child: Text('No records found.'),
+              );
             } else if (snapshot.hasData && snapshot.data!.isNotEmpty) {
               List<Book> favBooks = snapshot.data!;
 
