@@ -19,7 +19,9 @@ class GridViewWidget extends StatelessWidget {
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, childAspectRatio: 0.6),
             itemBuilder: (context, index) {
+
               Book book = _books[index];
+
               return Container(
                 margin: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
